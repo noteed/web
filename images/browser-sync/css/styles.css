@@ -1,0 +1,97 @@
+/*
+Sticky stuff:
+  sticky sidebar & footer, bootstrap 4 alpha 6 update
+  https://codepen.io/cornex/pen/MJOOeb
+Not sure it works well: when the left column is taller, it start scrolling after the right column (so their bottom is aligned).
+*/
+
+@media (min-width: 48em) {
+  .container {
+    max-width: 65rem;
+  }
+}
+
+
+
+body {
+    /* TODO test if really necessary, with different column heights */
+    flex-direction: column;
+    min-height: 100vh;
+    display: flex;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 8rem;
+}
+
+.sticky:before,
+.sticky:after {
+    /* TODO test if really necessary, with different column heights */
+    content: '';
+    display: table;
+}
+
+
+
+body {
+  font-family: helvetica;
+  text-rendering: optimizeLegibility;
+}
+
+.main {
+  padding-top: 8rem;
+}
+
+.menu-column {
+  font-size: 0.8rem;
+  color: #777;
+}
+.menu-column > div > div {
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  border-left: 2px solid transparent;
+}
+.menu-column > div > div > h4 {
+  font-size: 1rem;
+}
+.menu-column > div > div:hover {
+  border-left: 2px solid #ccc;
+}
+.menu-column > div > div.menu-selected {
+  border-left: 2px solid blue;
+  color: #000;
+}
+
+.content-column {
+  padding-left: 3rem;
+  line-height: 1.75rem;
+}
+.content-column > p {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+footer {
+  padding-top: 3rem;
+  color: #777;
+}
+
+h1, h2 {
+  margin-bottom: 4rem;
+}
+
+
+
+code {
+  color: #000;
+  background-color: white;
+  font-size: 95%;
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+a {
+  color: blue;
+}
