@@ -14,7 +14,8 @@ for NAME in $(ls /markdown/*.md) ; do
   NAME=$(basename $NAME)
   NAME=${NAME%.*}
 
-  echo Rendering $NAME...
+  echo $(date --iso-8601=seconds --utc) XXXX0000 gather.sh INFO Rendering $NAME...
+  echo $(date --iso-8601=seconds --utc) XXXX0000 gather.sh INFO Rendering $NAME... >> gathered/gather.log
   pandoc \
     --template /source/templates/default.html \
     /markdown/$NAME.md \
